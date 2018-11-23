@@ -1,7 +1,7 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default props =>
+const Footer = () => (
   <footer className="footer">
     <span className="todo-count">
       <strong>0</strong> todos left
@@ -14,3 +14,6 @@ export default props =>
       <li><Link to="/completed">Completed</Link></li>
     </ul>
   </footer>
+);
+
+export default Footer;

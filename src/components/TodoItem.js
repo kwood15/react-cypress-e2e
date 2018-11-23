@@ -1,15 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 const TodoItem = () => (
-<li>
+  <li>
     <div className="view">
-    <input className="toggle" type="checkbox" />
-    <label>
-        Do Stuff
-    </label>
-    <button className="destroy" />
+      <input className="toggle" type="checkbox" />
+      <label>Do Stuff</label>
+      <button className="destroy" />
     </div>
-</li>
+  </li>
 );
 
 export default TodoItem;
