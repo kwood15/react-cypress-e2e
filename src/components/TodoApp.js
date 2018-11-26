@@ -11,10 +11,9 @@ class TodoApp extends Component {
       currentTodo: '',
       todos: []
     }
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({
       currentTodo: event.target.value
     })
