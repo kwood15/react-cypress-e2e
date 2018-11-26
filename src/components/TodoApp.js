@@ -8,17 +8,29 @@ class TodoApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentTodo: '',
       todos: []
     }
+    this.handleChange = this.handleChange.bind(this);
   }
-  
+
+  handleChange(event) {
+    this.setState({
+      currentTodo: event.target.value
+    })
+  }
+
   render () {
+    const { currentTodo } = this.state;
     return (
       <Router>
         <div>
           <header className="header">
             <h1>Todos</h1>
-            <TodoForm />
+            <TodoForm
+              currentTodo={currentTodo}
+              handleChange={this.handleChange}
+            />
           </header>
           <section className="main">
             <TodoList todos={this.state.todos} />

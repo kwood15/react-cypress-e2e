@@ -1,17 +1,17 @@
 describe('Input form', () => {
-  it('focuses input on load', () => {
+  beforeEach(() => {
     cy.visit('http://localhost:3030')
-
-    cy.focused()
-      .should('have.class', 'new-todo')
   });
 
-  it.only('accepts input', () => {
-    const typedText = 'Test todo'
-    cy.visit('http://localhost:3030')
+  it('focuses input on load', () => {
+    cy.focused().should('have.class', 'new-todo');
+  });
+
+  it('accepts input', () => {
+    const typedText = 'Test input value';
 
     cy.get('.new-todo')
       .type(typedText)
-      .should('have.value', typedText)
+      .should('have.value', typedText);
   });
 });
