@@ -1,10 +1,11 @@
 describe('Input form', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3030')
+    cy.visit('/');
   });
 
   it('focuses input on load', () => {
-    cy.focused().should('have.class', 'new-todo');
+    cy.focused()
+    .should('have.class', 'new-todo');
   });
 
   it('accepts input', () => {
