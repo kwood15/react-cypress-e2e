@@ -5,7 +5,7 @@ describe('Input form', () => {
 
   it('focuses input on load', () => {
     cy.focused()
-    .should('have.class', 'new-todo');
+      .should('have.class', 'new-todo');
   });
 
   it('accepts input', () => {
@@ -14,5 +14,13 @@ describe('Input form', () => {
     cy.get('.new-todo')
       .type(typedText)
       .should('have.value', typedText);
+  });
+
+  context('Form submission', () => {
+    it('Adds a new todo on submit', () => {
+      cy.get('.new-todo')
+      .type('Test input value')
+      .type('{enter}');
+    });
   });
 });
