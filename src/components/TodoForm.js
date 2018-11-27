@@ -1,7 +1,11 @@
 import React from 'react';
 
-const TodoForm = ({ currentTodo, handleChange }) => (
-  <form>
+const TodoForm = ({
+  currentTodo,
+  handleChange,
+  handleSubmit
+}) => (
+  <form onSubmit={handleSubmit}>
     <input
       type='text'
       autoFocus
