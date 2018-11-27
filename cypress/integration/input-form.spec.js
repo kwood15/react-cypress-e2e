@@ -16,19 +16,25 @@ describe('Input form', () => {
       .should('have.value', inputText)
   });
 
-  context('Form submission', () => {
-    it('Adds a new todo on submit', () => {
+  context('form submission', () => {
+    it('adds a new todo on submit', () => {
       const newInputText = 'New input value'
 
       cy.server();
+
       cy.route('POST', 'api/todos', {
         id: 1,
         name: newInputText,
         isComplete: false
       });
+
       cy.get('.new-todo')
-      .type(newInputText)
-      .type('{enter}')
+        .type(newInputText)
+        .type('{enter}')
+
+      cy.get('.todo-list li')
+        .should('have.length', 1)
+        .and('contain', newInputText)
     });
   });
 });
